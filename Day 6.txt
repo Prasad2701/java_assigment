@@ -1,0 +1,55 @@
+Q.2
+package primenumber;
+
+ interface MouseHandler
+{
+  void mouseClicked();
+  void mousePressed();
+  void mouseReleased();
+}
+ interface WindowHandler
+{
+  void windowClosing();
+  void windowClosed();
+}
+ class WindowGUIApp implements MouseHandler,WindowHandler
+{
+  public void mouseClicked()
+  {
+	  System.out.println("the mouse");
+  }
+ public  void mousePressed()
+  {
+	  System.out.println("The mousepressed");
+  }
+  public void mouseReleased()
+  {
+	  System.out.println("The mouseReleased");
+  }
+  public void windowClosing()
+  {
+	  System.out.println("The windowclosing");
+  }
+  public void windowClosed()
+  {
+	  System.out.println("the windowclosed");
+  }
+}
+  public class Example1
+  {
+	  
+	  public static void main(String args[])
+	  {
+		  WindowGUIApp WindowGUIApp = new WindowGUIApp();
+		  
+		  WindowGUIApp.mouseClicked();
+		  WindowGUIApp.mousePressed();
+		  WindowGUIApp.mouseReleased();
+		  WindowGUIApp.windowClosing();
+		  WindowGUIApp.windowClosed();
+	  }
+	  
+  }
+	
+
+	

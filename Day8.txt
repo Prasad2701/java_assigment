@@ -1,0 +1,241 @@
+// Q.1 
+package armstrong;
+import java.util.Scanner;
+
+  class MyArithException extends Exception
+ {
+	 public MyArithException(String mess)
+	 { 
+		 super (mess); 
+	 }
+ }
+   class Calculator
+ {
+	    public int disp(int num) throws MyArithException
+	 {
+		 if(num==0)
+				 {
+			       throw new MyArithException("zero not allowd");
+				 }
+		
+		 else if(num<0)
+		 {
+			 throw new MyArithException("negative are not allow");
+		 }
+		 return num*2;
+	 }
+ }
+   public class MycalApp
+   {
+	   public static void main(String[] args) 
+	   {
+		  Scanner sc= new Scanner(System.in);
+		   Calculator c1= new Calculator();
+		   System.out.println("Enter the number");
+		   int num = sc.nextInt();
+		   int res =0;
+		   
+		   try {
+			   
+			   res=c1.Calculator(num);
+		       }
+		   catch(MyArithException m)
+		   {
+			   System.out.println(m);
+		   }
+		      System.out.println(res);
+	   }
+   }
+
+Q.
+
+import java.util.Scanner;
+
+class MyException extends Exception 
+{
+  MyException (String string)
+  {
+     super(string);
+  }
+}
+public class Demo
+{
+public static void main(String[] args) 
+ {
+	Demo d1= new Demo();
+	 d1.show1();
+	 System.out.println("Program excuted sucessfully");
+ }	
+	 public void show1() 
+	 {
+		 try
+		     {
+			   show2();
+			 }
+		 catch(MyException ie)
+		 {
+			 System.out.println(ie);
+		 }
+	 }
+	 public void show2() throws MyException
+	 {
+		 show3();
+	 }
+	 public void show3()throws MyException
+	 {
+		System.out.println("Enter the number");
+		Scanner sc= new Scanner (System.in);
+		int num= sc.nextInt();
+		if(num>10)
+		{
+			throw new MyException("num is greater than 10");
+		}
+		  System.out.println(num);
+	 }
+} 
+
+
+
+
+import java.util.*;
+class NumberNotDivisibleBySevenException extends Exception
+{
+	NumberNotDivisibleBySevenException(String string)
+	{
+		super(string);
+	}
+}
+ class Mymath
+{
+  public void disp() throws NumberNotDivisibleBySevenException
+  {
+	  System.out.println("Enter the number");
+	  Scanner sc= new Scanner(System.in);
+	  int num= sc.nextInt();
+	  if(!(num%7==0)) 
+	  {
+		 throw new NumberNotDivisibleBySevenException("number is not divisible by seven");
+	  }
+	  else
+	  {
+		  System.out.println(num);
+	  }
+  }
+}
+public class Demo
+{
+   public static void main(String[] args) 
+   {
+	     Mymath m1= new Mymath();
+	     
+ 	  try
+	  {
+		  m1.disp();
+	  }
+ 	  catch(NumberNotDivisibleBySevenException ie)
+ 	  {
+ 		  System.out.println(ie);
+ 	  }
+   }	
+}
+
+// Q.4  problem
+package armstrong;
+
+import java.util.Scanner;
+
+class InvalidLengthException extends Exception
+{
+	InvalidLengthException(String string)
+	{
+		super(string);
+	}
+}
+ class Authenticator
+{
+  Authenticator(String ref) throws InvalidLengthException  	
+  {  
+	  if(5>ref.length()||ref.length()>9)
+	  {
+	  throw new InvalidLengthException("enter the password with length 5 digit");
+	  }
+  }
+  
+  void done()
+  {
+	  System.out.println("successful authentication");
+  }
+}
+ 
+ class Demo
+ {
+    public static void main(String[] args) 
+    {
+		System.out.println("Enter the password:");
+		String password= new Scanner(System.in).next();
+		try
+		{
+			Authenticator authenticator= new Authenticator(password);
+			authenticator.done();
+		}
+		catch(InvalidLengthException ie)
+		{
+			System.out.println(ie);
+		}
+	}
+ }
+
+
+// Q.5s problem
+package armstrong;
+
+import java.util.Scanner;
+
+class ResourceNotAllocatedException extends Exception
+{
+       ResourceNotAllocatedException (String string)
+	 {
+	     super(string);
+	 }
+}
+ class MyResource implements AutoCloseable
+{
+   public MyResource(int capacity) throws ResourceNotAllocatedException
+   {
+	   if(capacity>100)
+	   {
+		   throw new ResourceNotAllocatedException("not sufficient space ");
+	   }
+   }
+   void disp()
+   {
+	   System.out.println("sucessful");
+   }
+    public void close()
+    {
+    	System.out.println("resource is closed");
+    }
+} 
+public class Demo
+{
+   public static void main(String[] args) 
+   {
+       System.out.println("Enter the capacity");
+       Scanner sc= new Scanner (System.in);
+       int capcity = sc.nextInt();
+       int capaity = 0;
+	try(MyResource myresource = new MyResource(capaity))
+       {
+    	   myresource.disp();
+       }
+        catch (ResourceNotAllocatedException ie)
+       {
+        	System.out.println(ie);
+       }
+   }	
+}
+
+
+
+
+

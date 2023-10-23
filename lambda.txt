@@ -1,0 +1,62 @@
+// Q.2  problem
+package armstrong;
+//interface first 
+//{
+//   abstract void disp();
+//   
+//   default void disp2()
+//   {
+//	   System.out.println("display 2 is called");
+//   }
+//   static void disp3()
+//   {
+//	   System.out.println("display 3 of static method is called");
+//   }
+//}
+//public class Demo
+//{
+//  public static void main(String[] args) 
+//  {
+//	  first ref= ()->{System.out.println("new class");};
+//	  ref.disp2();
+//	  first.disp3();
+//  }	
+//}
+//interface calculator 
+//{
+// int multiply(int a ,int b);
+//} 
+//  public class calcDemo
+//  {
+//	  public static void main(String[] args) 
+//	{
+//	  calculator ref= (int a,int b)->{System.out.println("inside main function");
+//	  return a*b;};
+//	  System.out.println(ref.multiply(10,20));
+//	}
+// }
+ class Display
+ {
+	synchronized void display()
+	{
+		System.out.println(Thread.currentThread().getName());
+		for(int i=1;i<=10;i++)
+      {
+		System.out.println(i);	
+      }
+	}
+ }
+ public class calcDemo
+ {
+	 public static void main(String[] args) 
+	 {
+	    display d= new display();
+	    Ruunable ref=()->{d.disp();};
+	    Thread t1=new Thread(ref,"first");
+	    Thread t2=new Thread(ref,"Second");
+	    t1.start();
+	    t2.start();
+	 } 
+ }
+
+  

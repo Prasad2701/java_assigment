@@ -1,0 +1,59 @@
+Q.1
+package armstrong;
+abstract class course
+{
+	 public void start()
+	 {
+		 System.out.println("start");
+	 }
+	  abstract double getfee();
+	  abstract void evaluate();  
+}
+ 
+ class DBDA extends course
+{
+	 private int fee= 1000;
+	public double getfee()
+	{
+		return fee;
+	}
+	void evaluate()
+	{
+		System.out.println("The evaluation is going on");
+	}
+}
+ class DAC extends course
+ {
+	private int fee=5000;
+	public double getfee()
+	{
+		return fee;
+	}
+	 void evaluate()
+	 {
+		 System.out.println("dac evaluation is going on");
+	 }
+ }
+ public class Demo
+ {
+	 
+	 static void perform(course ref)
+	 {
+		 ref.start();
+		 ref.getfee();
+		 ref.evaluate(); 
+	 }
+	 
+	 public static void main(String[] args) 
+	{
+	   perform (new DBDA());
+	   perform (new DAC());
+	    
+	}
+	 
+ }
+ 
+ 
+ 
+ 
+ 

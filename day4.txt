@@ -1,0 +1,360 @@
+/*                                                 
+1) Define 2 classes “First” and “Second” with member variables,member
+functions and constructors of your choice. Now define a class “Two” in which
+define main function.In main function create various instances of First and
+Second and call their individual member functions.
+
+package reversenum;
+
+import java .util.*;
+class First 
+{
+  	private int num1;
+  	public  
+  	        First()
+  	        {
+  		         System.out.println("inside constructor");
+  	        }
+  	void disp()
+  	{
+  		System.out.println("inside the function");
+  	}
+  	First(int num)
+  	{
+  		System.out.println(num);
+  	}
+}
+   class Second
+  	{
+  		private int num2;
+  		
+  		public 
+  		Second()
+  		{
+  			System.out.println("inside 2nd constructor");
+  		}
+  		void disp2()
+  		{
+  			System.out.println("Inside 2nd function");
+  		}
+  		Second (int num2)
+  		{
+  			System.out.println(num2);
+  		}
+  	}
+   public class Two
+   {
+	   public static void main(String args[])
+	   {
+		   First f1= new First();
+		   First f2= new First(10);
+		   Second s1=new Second();
+		   Second s2=new Second(30);
+		   f1.disp();
+		   s1.disp2();
+		   
+	   }
+	   
+   }  
+   
+   2)Create a class with static and non-static member variables. Define static and non-static member functions.
+    Create instance of this class and call both static and non-static member functions. 
+
+package reversenum;
+import java.util.*;
+class Myclass
+{
+    private static int variable =10;
+     int num;
+    public void disp(int value)
+    {
+    	this.num=value;
+    	System.out.println("the non static variable is :"+num);
+    	
+    }
+    public static void staticMethod()
+    {
+    	System.out.println("this is a static method:");
+    	System.out.println("static number:"+variable);
+    }
+}
+public class Myclass1
+{ 
+	 public static void main(String args[])
+	 {
+	    Myclass m1 = new Myclass();
+	    Myclass.staticMethod();
+	    m1.disp(10);
+	 }
+}  
+
+Q.3
+package reversenum;
+ class Check
+{
+   private int num1;
+    protected int num2;
+    int num3;
+    public int num4;
+    	      void disp()
+    	      {
+    	            System.out.println(num1);
+    	            System.out.println(num2);
+    	            System.out.println(num3);
+    	            System.out.println(num4);
+    	      }
+    
+	public class Myclass1
+    {
+    	public static void main(String args[])
+    	{
+    		Check c1= new Check();
+    		c1.disp();
+    	}
+    }
+    
+}
+ Q.4
+package reversenum;
+
+class One
+{
+    One(int num1 )
+    {
+      System.out.println("inside 1st constructor "+num1);	
+    }
+}
+  class Second1 extends One
+{	
+	 Second1(int num)
+	 {
+		 super(20);
+	   System.out.println("the number"+num);
+	 }
+}
+ public class Second
+ {
+	 public static void main(String agrs[])
+	 {
+		 Second1 obj2= new Second1(30);		 
+	 }
+	 
+ } 
+
+Q.5
+   class One
+{
+   One()
+   {
+       System.out.println("Inside constructor");
+   }
+}
+class Second1 extends One
+{
+   Second1 ()
+   {
+	   System.out.println("inside second constructor");
+   }
+}
+   class Third extends Second1
+   {
+	   Third()
+	   {
+	   System.out.println("Enter the in 3rd constructor");
+	   }
+   
+   }
+	  
+   public class Second
+{
+    	public static void main(String args[])
+    	{
+    		Third obj1= new Third();
+     	}
+}    
+
+Q.6
+package reversenum;
+
+class A
+{
+  int num1=10;
+  
+  void disp()
+  {
+	  System.out.println("inside disp "+num1);
+  }
+  
+    A()
+    {
+    	System.out.println("inside con1");
+    }
+}
+
+class  B extends A
+{
+   int num2=30;
+   
+   void disp()
+   {
+	   System.out.println("the value of number :"+num2);
+   }
+    B()
+    {
+    	System.out.println("inside 2 constructor");
+    }
+}
+class C extends A
+{
+	int num3;
+	
+	void disp()
+	{
+		System.out.println("The num is "+num3);
+	}
+	C(int num)
+	{
+		System.out.println(num3);
+	}
+}
+
+public class Demo1
+{
+   public static  void main(String args[])
+   {
+	   C obj1= new C(40);
+	   obj1.disp();
+	   
+	   B obj2=new B();
+	   obj2.disp();
+	   
+	   A obj3 =new A();
+	   obj3.disp();
+   }
+}  
+Q.7
+class parent
+{
+   void disp()
+   {
+	   System.out.println("parent class method");
+   }
+}
+class  child extends parent 
+{
+	int num;
+    void  disp(int num)	
+    {
+    	System.out.println("child class method"+num);
+    }
+}
+
+public class Demo1
+{
+   public static void main(String args[])
+   {
+	   child obj1= new child ();
+	 obj1.disp(10);
+	   parent obj2= new parent ();
+	   obj1.disp(30);
+   }
+}
+
+
+
+Q.8
+class parent 
+{
+    void add()
+    {
+        
+    }
+    
+}
+class child extends parent
+{
+   
+    void add(int num1)
+    {
+        System.out.println("the sum is"+num1);
+    }
+}
+
+public class Demo1
+{
+    public static void main(String agrs[])
+    {
+        child obj1 = new child();
+        obj1.add(30);
+    }
+}
+
+*
+Q.9*/
+
+ package reversenum;
+import java.util.*;
+class Shape
+{
+    void draw()	
+    {
+    	System.out.println("The draw funtion shape");
+    }
+}
+class Circle extends Shape
+{
+     void draw()
+     {
+    	 System.out.println("The draw funtion of Circle");
+     }
+}
+class Polygon extends Shape
+{ 
+     void draw()
+     {
+    	 System.out.println("The draw function of polygon");
+     }
+}
+class rectangle extends Shape
+{
+   void disp()
+   {
+	    System.out.println("draw rectangle");
+   }
+}
+
+public class ShapeDemo
+{
+	public static void main()
+	{
+	    Shape ref1=new Circle();
+	    Shape ref2=new Polygon();
+	    Shape ref3= new rectangle();
+	    
+	    ref1.draw();
+	    ref2.draw();
+	    ref3.draw();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  	

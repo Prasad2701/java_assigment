@@ -1,0 +1,98 @@
+// Q1 create a multi-threaded application by using  "extends Thread " method.create 2 threads.they should display characters from A to J.
+package primenumber;
+public class Th1 extends Thread
+{
+	 public void run()
+	 {
+		 char ch ='A';
+		 for (int i =0;i<=10;i++)
+		 {
+			 System.out.println(ch); 
+			 ch++;
+		 }	 
+	 }
+    public static void main(String[] args) 
+    {
+	     Th1 t1= new Th1();
+	     t1.start();
+	     }
+}
+
+// Q2 create a multi-threaded application by using  "extends Thread " method.create 2 threads.
+//they should display characters from A to J.
+package primenumber;
+public class Th1 implements Runnable
+{
+	 public void run()
+	 {
+		 char ch ='A';
+		 for (int i =0;i<=10;i++)
+		 {
+			 System.out.println(ch); 
+			 ch++;
+		 }	 
+	 }
+    public static void main(String[] args) 
+    {    Th1 ob= new Th1();
+	     Thread t1= new Thread(ob);
+	     t1.start();
+	     }
+}
+
+//3) create 3 threads in such a way that while one thread is executing, 2 threads cannot interfere.
+//They should displa+y output "Exec  0" to "Exec 5".
+package  primenumber ;
+
+
+class Th1  implements Runnable
+{
+	 synchronized public void run() 
+	{
+		for(int i=1;i<=2;i++)		
+		{
+		 System.out.println("hello");
+		}
+	}
+
+ public static void main(String args[])
+ {
+  Th1 ob=new Th1();
+  Thread th1 = new Thread(ob);
+  Thread th2 = new Thread(ob);
+  Thread th3 = new Thread(ob);   
+    th1.start();
+    th2.start();
+    th3.start();
+    
+ }
+}
+
+Q5.//create 2 threads one thread will display 1 to 50 
+//second thread will display 50 to 1 both the threads should start simultaneously.
+//(use implements method)
+package primenumber;
+public class Th1 implements Runnable
+{
+		synchronized public void run()
+	{
+			int i=1,j=50;
+		for(i=1;i<=50;i++)
+		{
+			System.out.println(i);
+		}
+		for(j=50;j>=1;j--)
+		{
+			System.out.println(j);
+		}
+	}
+	public static void main(String args[])
+	{
+		Th1 ob =new Th1();
+		Thread t1 = new Thread(ob);
+		Thread t2 = new Thread(ob);
+		t1.start();
+		t2.start();
+		
+	}
+}
+
